@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Task from './Task';
 
-function KanbanColumn({ title, column, tasks, onCreateTask, onMoveTask }) {
+function KanbanColumn({ title, column, tasks, onCreateTask, onMoveTask, onDeleteTask }) {
     const [newTaskTitle, setNewTaskTitle] = useState('');
 
     const handleSubmit = (e) => {
@@ -32,7 +32,8 @@ function KanbanColumn({ title, column, tasks, onCreateTask, onMoveTask }) {
                         key={task.id}
                         task={task}
                         onMoveTask={onMoveTask}
-                        onDeleteTask={onDeleteTask} />
+                        onDeleteTask={onDeleteTask}
+                    />
                 ))}
             </div>
         </div>
